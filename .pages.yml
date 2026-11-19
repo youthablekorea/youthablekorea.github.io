@@ -1,0 +1,112 @@
+# Pages CMS 관리자 화면 설정 — https://app.pagescms.org
+media:
+  - name: images
+    label: 사진
+    input: uploads/images
+    output: /uploads/images
+    categories: [image]
+  - name: files
+    label: 첨부파일
+    input: uploads/files
+    output: /uploads/files
+content:
+  - name: notice
+    label: 공지사항
+    description: 법인 공지와 운영 안내
+    type: collection
+    path: notice/_posts
+    filename: "{year}-{month}-{day}-{hour}{minute}{second}.md"
+    view: {fields: [title, date], primary: title, sort: [date], default: {sort: date, order: desc}}
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: date, label: 게시일, type: date, options: {time: true, format: "yyyy-MM-dd HH:mm"}}
+      - {name: author, label: 작성자, type: string, default: 사무국}
+      - {name: pinned, label: 상단 고정, type: boolean}
+      - name: body
+        label: 내용
+        type: rich-text
+      - name: files
+        label: 첨부파일 (PDF·한글·워드·엑셀·사진, 여러 개 가능)
+        type: file
+        options: {media: files, extensions: [pdf, hwp, hwpx, doc, docx, xls, xlsx, ppt, pptx, zip, jpg, jpeg, png], multiple: {max: 10}}
+  - name: recruit
+    label: 모집·행사
+    description: 신청 가능한 프로그램·행사 (신청은 구글폼 링크)
+    type: collection
+    path: recruit/_posts
+    filename: "{year}-{month}-{day}-{hour}{minute}{second}.md"
+    view: {fields: [title, date], primary: title, sort: [date], default: {sort: date, order: desc}}
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: date, label: 게시일, type: date, options: {time: true, format: "yyyy-MM-dd HH:mm"}}
+      - {name: author, label: 작성자, type: string, default: 사무국}
+      - name: status
+        label: 상태
+        type: select
+        default: open
+        options: {values: [{name: open, label: 모집 중}, {name: run, label: 운영 중}, {name: end, label: 종료}]}
+      - {name: field, label: 분야, type: string, description: "예) 청소년 프로그램, 다문화·시민교육"}
+      - {name: target, label: 대상, type: string, description: "예) 중학생 20명"}
+      - {name: schedule, label: 일정, type: string, description: "예) 2027. 1. 9.(토)~10.(일)"}
+      - {name: place, label: 장소, type: string}
+      - {name: period, label: 모집 기간(표시용), type: string, description: "예) ~ 2026. 12. 20."}
+      - {name: deadline, label: 신청 마감일, type: date, default: "", description: "D-day 표시와 신청 버튼 자동 마감에 씁니다", options: {format: "yyyy-MM-dd"}}
+      - {name: fee, label: 참가비, type: string, default: 무료}
+      - {name: form_url, label: 신청서 링크(구글폼), type: string, description: "https://forms.gle/… 비워 두면 신청 버튼이 나오지 않습니다"}
+      - name: body
+        label: 내용
+        type: rich-text
+      - name: files
+        label: 첨부파일 (PDF·한글·워드·엑셀·사진, 여러 개 가능)
+        type: file
+        options: {media: files, extensions: [pdf, hwp, hwpx, doc, docx, xls, xlsx, ppt, pptx, zip, jpg, jpeg, png], multiple: {max: 10}}
+  - name: story
+    label: 활동 이야기
+    description: 교육·체험·교류 현장 사진과 이야기
+    type: collection
+    path: story/_posts
+    filename: "{year}-{month}-{day}-{hour}{minute}{second}.md"
+    view: {fields: [title, date], primary: title, sort: [date], default: {sort: date, order: desc}}
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: date, label: 게시일, type: date, options: {time: true, format: "yyyy-MM-dd HH:mm"}}
+      - {name: author, label: 작성자, type: string, default: 사무국}
+      - name: cover
+        label: 대표 사진
+        type: image
+        description: 청소년 얼굴이 나오는 사진은 초상 동의를 받은 경우에만 올립니다
+        options: {media: images}
+      - {name: summary, label: 한 줄 요약(목록에 표시), type: string}
+      - name: body
+        label: 내용
+        type: rich-text
+      - name: files
+        label: 첨부파일 (PDF·한글·워드·엑셀·사진, 여러 개 가능)
+        type: file
+        options: {media: files, extensions: [pdf, hwp, hwpx, doc, docx, xls, xlsx, ppt, pptx, zip, jpg, jpeg, png], multiple: {max: 10}}
+  - name: archive
+    label: 자료실
+    description: 교육자료·행사 자료·법인 공개자료·연구보고서 (연구보고서는 정책연구 > 연구성과에도 함께 표시)
+    type: collection
+    path: archive/_posts
+    filename: "{year}-{month}-{day}-{hour}{minute}{second}.md"
+    view: {fields: [title, date], primary: title, sort: [date], default: {sort: date, order: desc}}
+    fields:
+      - {name: title, label: 제목, type: string, required: true}
+      - {name: date, label: 게시일, type: date, options: {time: true, format: "yyyy-MM-dd HH:mm"}}
+      - {name: author, label: 작성자, type: string, default: 사무국}
+      - name: kind
+        label: 자료 분류
+        type: select
+        default: pub
+        options: {values: [{name: edu, label: 교육자료}, {name: event, label: 행사 자료}, {name: pub, label: 법인 공개자료}, {name: research, label: 연구보고서}]}
+      - name: body
+        label: 내용
+        type: rich-text
+      - name: files
+        label: 첨부파일 (PDF·한글·워드·엑셀·사진, 여러 개 가능)
+        type: file
+        options: {media: files, extensions: [pdf, hwp, hwpx, doc, docx, xls, xlsx, ppt, pptx, zip, jpg, jpeg, png], multiple: {max: 10}}
+settings:
+  commit:
+    identity: user

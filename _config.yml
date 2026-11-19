@@ -1,0 +1,17 @@
+title: 사단법인 유스에이블코리아
+url: https://youthablekorea.github.io
+baseurl: 
+timezone: Asia/Seoul
+future: true
+permalink: /:categories-:year:month:day-:title:output_ext
+markdown: kramdown
+exclude: [README.md, .pages.yml, .gitattributes]
+defaults:
+  - scope: {path: "notice", type: posts}
+    values: {layout: post-notice}
+  - scope: {path: "recruit", type: posts}
+    values: {layout: post-recruit}
+  - scope: {path: "story", type: posts}
+    values: {layout: post-story}
+  - scope: {path: "archive", type: posts}
+    values: {layout: post-archive}
