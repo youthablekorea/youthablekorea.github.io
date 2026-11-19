@@ -107,6 +107,3 @@ content:
         label: 첨부파일 (PDF·한글·워드·엑셀·사진, 여러 개 가능)
         type: file
         options: {media: files, extensions: [pdf, hwp, hwpx, doc, docx, xls, xlsx, ppt, pptx, zip, jpg, jpeg, png], multiple: {max: 10}}
-settings:
-  commit:
-    identity: user
