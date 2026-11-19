@@ -38,7 +38,7 @@
 <div class="view-h"><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="badge b-cat">{% case page.kind %}{% when "edu" %}교육자료{% when "event" %}행사 자료{% when "research" %}연구보고서{% else %}법인 공개자료{% endcase %}</span></div><h2>{{ page.title }}</h2><div class="view-meta">{{ page.date | date: "%Y. %-m. %-d." }} · {{ page.author | default: "사무국" }} <button class="mini" data-share>링크 복사</button></div></div>
 
 <div class="post-body">{{ content }}</div>
-{% if page.files %}<div class="attach"><b>첨부파일</b><ul>{% for f in page.files %}{% assign fn = f | split: "/" | last %}<li><a href="{{ f }}" download="{{ fn }}">📎 {{ fn | url_decode }}</a></li>{% endfor %}</ul></div>{% endif %}
+{% if page.files %}<div class="attach"><b>첨부파일</b><ul>{% for f in page.files %}{% assign fn = f | split: "/" | last %}<li><a href="{{ f | uri_escape }}" download="{{ fn }}">📎 {{ fn | url_decode }}</a></li>{% endfor %}</ul></div>{% endif %}
 
 <p><a class="btn btn-line btn-sm" href="news-archive.html">목록으로</a></p>
 </article>
