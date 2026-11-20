@@ -293,6 +293,52 @@ caption{text-align:left;font-size:14px;color:var(--sub);padding:0 0 8px}
   .org .h{width:16px}
 }
 
+/* 2026-11-20 목사님 수정사항 반영 */
+.greet{border-left:4px solid var(--teal);padding:4px 0 4px 22px;margin:0 0 28px}
+.greet p{margin:0 0 14px;line-height:1.85}
+.greet .greet-t{font-size:clamp(20px,2.4vw,24px);font-weight:800;color:var(--navy);line-height:1.45}
+.greet .sign{text-align:right;margin-top:22px}
+.officers td,.officers th{vertical-align:top}
+.officers caption{caption-side:top;text-align:right;color:var(--sub);font-size:14px;padding:8px 12px}
+ul.cv{margin:0;padding-left:16px}ul.cv li{margin:2px 0;font-size:15px}
+ul.qual{list-style:none;padding:0;margin:0 0 18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+ul.qual li{border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:15px;color:var(--sub)}
+ul.qual b{font-size:24px;color:var(--navy);margin-right:2px}ul.qual span{display:block;color:var(--text,#1f2937);font-weight:600;margin-top:2px}
+.org .row.two{align-items:flex-start;gap:28px}
+.org .col{display:flex;flex-direction:column;align-items:center}
+.org .row.depts{gap:8px}
+.org .n.s{min-width:0;font-size:15px;padding:8px 14px;border-width:1px;font-weight:600}
+.org .n.inst{border-color:var(--teal);background:var(--teal);color:#fff}
+.org .v.dash{background:none;border-left:2px dashed var(--teal)}
+.org .lbl{color:var(--sub);font-size:13.5px;margin:6px 0}
+.org .row.aux{margin-top:14px;gap:10px}
+.org .tag{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--navy);background:#fff}
+.org .tag.t2{color:var(--teal-t)}
+.hint{color:var(--sub);font-size:14.5px;margin:-6px 0 12px}
+.rfs{display:grid;gap:10px;margin:0 0 28px}
+details.rf{border:1px solid var(--line);border-radius:var(--r);background:#fff}
+details.rf summary{list-style:none;cursor:pointer;display:flex;gap:14px;padding:16px 18px;align-items:flex-start}
+details.rf summary::-webkit-details-marker{display:none}
+details.rf summary::after{content:"+";margin-left:auto;font-size:22px;line-height:1;color:var(--teal-t)}
+details.rf[open] summary::after{content:"−"}
+details.rf .no{font-weight:800;color:var(--teal-t);font-size:15px;padding-top:2px}
+details.rf b{display:block;font-size:17px;color:var(--navy)}
+details.rf .d{display:block;color:var(--sub);font-size:15px;margin-top:2px}
+details.rf p{margin:0;padding:0 18px 16px 52px;font-size:15px}
+details.rf p b{display:inline;font-size:15px;margin-right:6px;color:var(--teal-t)}
+.rtype{margin:24px 0 8px;font-size:18px}
+@media(max-width:560px){.org .row.two{flex-wrap:wrap!important;gap:14px}.org .row.depts{flex-wrap:nowrap}.org .n.s{padding:7px 9px;font-size:14px}details.rf p{padding-left:18px}.officers td:nth-child(3){white-space:normal!important}}
+
+.org .row.two{position:relative;padding-top:20px;gap:28px;flex-wrap:nowrap}
+.org .row.two>.col{width:330px;position:relative}
+.org .row.two>.col::before{content:"";width:2px;height:20px;background:var(--navy);position:absolute;top:-20px;left:calc(50% - 1px)}
+.org .row.two::before{content:"";position:absolute;top:0;left:165px;right:165px;height:2px;background:var(--navy)}
+.org .row.depts{position:relative;padding-top:16px;gap:8px;flex-wrap:nowrap}
+.org .row.depts::before{content:"";position:absolute;top:0;left:52px;right:52px;height:2px;background:var(--navy)}
+.org .row.depts .n.s{width:104px;position:relative}
+.org .row.depts .n.s::before{content:"";position:absolute;top:-17px;left:calc(50% - 1px);width:2px;height:16px;background:var(--navy)}
+@media(max-width:720px){.org .row.two{flex-direction:column;align-items:center;gap:14px;padding-top:0}.org .row.two::before,.org .row.two>.col::before{display:none}.org .row.two>.col{width:auto}.org .row.depts .n.s{width:96px;padding:7px 4px}.org .row.depts::before{left:48px;right:48px}}
+
 /* ── 게시판 글 보기 ── */
 .prep{border:1px dashed var(--line,#E3E8EF);border-radius:14px;padding:16px 18px;color:var(--sub,#4B5563);margin:12px 0}.prep p{margin:0}
 .post-body{font-size:16.5px;line-height:1.85;margin:22px 0;overflow-wrap:anywhere}

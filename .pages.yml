@@ -100,6 +100,10 @@ content:
         type: select
         default: pub
         options: {values: [{name: edu, label: 교육자료}, {name: event, label: 행사 자료}, {name: pub, label: 법인 공개자료}, {name: research, label: 연구보고서}]}
+      - name: rtype
+        label: 연구성과 유형 (자료 분류가 '연구보고서'일 때만 선택)
+        type: select
+        options: {values: [정책보고서, 정책제안, 학술행사]}
       - name: body
         label: 내용
         type: rich-text
