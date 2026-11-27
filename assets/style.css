@@ -363,6 +363,7 @@ a.app:focus-visible{outline:none}a.app:focus-visible .lb{text-decoration:underli
 @media(max-width:480px){.apps{grid-template-columns:repeat(4,1fr);gap:18px 4px}.apps.dock{padding:16px 8px;border-radius:24px}
 .app .ico{width:58px;height:58px;border-radius:17px}.app svg{width:30px;height:30px}.app .lb{font-size:12.5px}.staff .sblk{margin:24px 0}}
 .staff-pg .actbar{display:none}@media(max-width:1040px){.staff-pg .site-f{padding-bottom:0}}  /* 관계자 페이지: 방문자용 하단 막대 숨김 */
+.staff .guide{margin:0 0 12px;padding:14px 18px;border:1px solid var(--line);border-radius:var(--r);font-size:16px}.staff .guide.off{color:#9CA3AF;background:#F3F4F6;border-style:dashed}
 
 /* ── 게시판 글 보기 ── */
 .prep{border:1px dashed var(--line,#E3E8EF);border-radius:14px;padding:16px 18px;color:var(--sub,#4B5563);margin:12px 0}.prep p{margin:0}
